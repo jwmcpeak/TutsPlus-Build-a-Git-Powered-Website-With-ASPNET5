@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Post>
+@{
+}
+
+<div class="row">
+    @foreach (var post in Model)
+    {
+        <h3>
+            <a asp-action="SinglePost" asp-controller="Blog"
+               asp-route-year="@post.PublishDate.Year"
+               asp-route-month="@post.PublishDate.Month"
+               asp-route-day="@post.PublishDate.Day"
+               asp-route-title="@post.Title.ToLower().Replace(" ", "-")">@post.Title</a>
+        </h3>
+        <div>@Html.Raw(post.Content)</div>
+        <hr/>
+    }
+</div>

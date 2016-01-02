@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Post>
+@{
+}
+
+<div class="row">
+    @foreach (var post in Model)
+    {
+        <h3>@post.Title</h3>
+        <div>@Html.Raw(post.Content)</div>
+        <hr/>
+
+    }
+</div>
